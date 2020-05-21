@@ -78,6 +78,8 @@ const FBSearchBar = () => {
     input.current.focus();
   };
 
+  
+
   const handleChangeText = text => {
     //input.current.focus();
     setKeyword(text);
