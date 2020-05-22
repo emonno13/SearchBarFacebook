@@ -127,7 +127,7 @@ class FBSearchBar extends React.Component {
           <View style={styles.header}>
             <View style={styles.header_inner}>
               <View>
-                <Text>Facebook</Text>
+                <Text>FACEBOOK</Text>
               </View>
               <TouchableHighlight
                 activeOpacity={1}
