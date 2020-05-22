@@ -1,5 +1,5 @@
 // Import react
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 // Import react-native components
 import {
@@ -26,18 +26,18 @@ const {Value, timing} = Animated;
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
+const _input_box_translate_x = new Value(width);
+const _back_button_opacity = new Value(0);
+const _content_translate_y = new Value(height);
+const _content_opacity = new Value(0);
+
 // Declare component
 const FBSearchBar = () => {
   // state
-
   const [isFocused, setFocused] = useState(false);
   const [keyword, setKeyword] = useState('');
-  const input = useRef(null);
+  const refSearch = useRef();
   // animation values
-  const _input_box_translate_x = new Value(width);
-  const _back_button_opacity = new Value(0);
-  const _content_translate_y = new Value(height);
-  const _content_opacity = new Value(0);
 
   const _onFocus = () => {
     // update state
@@ -75,7 +75,7 @@ const FBSearchBar = () => {
 
     // force focus
     //this.refs.input.focus();
-    input.current.focus();
+    refSearch.current.focus();
   };
 
   const handleChangeText = text => {
@@ -118,8 +118,13 @@ const FBSearchBar = () => {
 
     // force blur
     //this.refs.input.blur();
-    input.current.blur();
+    refSearch.current.blur();
   };
+
+  useEffect(() => {
+    //refSearch.current.focus();
+    console.log(refSearch)
+  });
 
   return (
     <>
@@ -151,11 +156,11 @@ const FBSearchBar = () => {
                 </TouchableHighlight>
               </Animated.View>
               <TextInput
-                ref={input}
+                ref={refSearch}
                 placeholder="Search Facebook"
                 clearButtonMode="always"
                 value={keyword}
-                onChangeText={handleChangeText}
+                onChangeText={value => setKeyword(value)}
                 style={styles.input}
               />
             </Animated.View>

@@ -2,8 +2,8 @@ import React from 'react';
 import {View, Text} from 'react-native';
 
 // Search bar
-import FBSearchBar from './searchBar';
-//import FBSearchBar from './searchBarHook';
+//import FBSearchBar from './searchBar';
+import FBSearchBar from './searchBarHook';
 
 const App = () => {
   return (

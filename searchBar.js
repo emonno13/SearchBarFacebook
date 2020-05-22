@@ -120,6 +120,10 @@ class FBSearchBar extends React.Component {
     this.refs.input.blur();
   };
 
+  componentDidUpdate() {
+    console.log(this.refs);
+  }
+
   render() {
     return (
       <>
