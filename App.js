@@ -8,8 +8,9 @@ import FBSearchBar from './searchBarHook';
 const App = () => {
   return (
     <View style={{flex: 1, paddingTop: 100}}>
+      <Text>..................................</Text>
       <FBSearchBar />
-      <Text style={{alignSelf: 'center'}}> Content </Text>
+      <Text style={{alignSelf: 'center',marginTop:200}}> Content </Text>
     </View>
   );
 };

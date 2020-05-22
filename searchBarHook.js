@@ -30,7 +30,6 @@ const _input_box_translate_x = new Value(width);
 const _back_button_opacity = new Value(0);
 const _content_translate_y = new Value(height);
 const _content_opacity = new Value(0);
-
 // Declare component
 const FBSearchBar = () => {
   // state
@@ -38,6 +37,7 @@ const FBSearchBar = () => {
   const [keyword, setKeyword] = useState('');
   const refSearch = useRef();
   // animation values
+
 
   const _onFocus = () => {
     // update state
